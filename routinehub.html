@@ -1,130 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
+    <title>Redirect</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <style>
-    .responsive {
-  width: 100%;
-  height: auto;
-}
-body {
-  font-family: system-ui;
-  background-color: white;
-  text-align: center;
-	body { 
-        background: #2f3236; 
-        font-family: system-ui;
-        color: white;
-        text-align: center;
-        opacity: 0;
+      body {
+            background: white;
+            font-family: system-ui;
+            color: black
+        }
 
+        /* Light Mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #fff
+            }
 
-}
-.button {
-  background-color: #f4f4fc;
-  border: none;
-  border-radius: 12px;
-  color: #0c84fc;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
+            /* Dark Mode */
+        }
+      
+        .loader,
+        .loader:before,
+        .loader:after {
+            background: #ffffff;
+            -webkit-animation: load1 1s infinite ease-in-out;
+            animation: load1 1s infinite ease-in-out;
+            width: 1em;
+            height: 4em;
+        }
 
+        .loader {
+            color: #ffffff;
+            text-indent: -9999em;
+            margin: 88px auto;
+            position: relative;
+            font-size: 11px;
+            -webkit-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-animation-delay: -0.16s;
+            animation-delay: -0.16s;
+        }
 
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    color: white;
-    background-color: #333;
-  }
-.button {
-  background-color: #5c5c5c;
-  border: none;
-  border-radius: 12px;
-  color: #0c84fc;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
+        .loader:before,
+        .loader:after {
+            position: absolute;
+            top: 0;
+            content: '';
+        }
 
-.contacts {
-  position: fixed;
-  bottom: 0;
-}
-.contactsl {
-  margin: 5px;
-  margin-bottom: 5px;
-}
-	
-	.spinner {
-  margin: 100px auto;
-  width: 40px;
-  height: 40px;
-  position: relative;
-}
+        .loader:before {
+            left: -1.5em;
+            -webkit-animation-delay: -0.32s;
+            animation-delay: -0.32s;
+        }
 
-.cube1, .cube2 {
-  background-color: #333;
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  
-  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
-  animation: sk-cubemove 1.8s infinite ease-in-out;
-}
+        .loader:after {
+            left: 1.5em;
+        }
 
-.cube2 {
-  -webkit-animation-delay: -0.9s;
-  animation-delay: -0.9s;
-}
+        @-webkit-keyframes load1 {
 
-@-webkit-keyframes sk-cubemove {
-  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
-  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
-  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
-  100% { -webkit-transform: rotate(-360deg) }
-}
+            0%,
+            80%,
+            100% {
+                box-shadow: 0 0;
+                height: 4em;
+            }
 
-@keyframes sk-cubemove {
-  25% { 
-    transform: translateX(42px) rotate(-90deg) scale(0.5);
-    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
-  } 50% { 
-    transform: translateX(42px) translateY(42px) rotate(-179deg);
-    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
-  } 50.1% { 
-    transform: translateX(42px) translateY(42px) rotate(-180deg);
-    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
-  } 75% { 
-    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-  } 100% { 
-    transform: rotate(-360deg);
-    -webkit-transform: rotate(-360deg);
-  }
-}
-	
-	
-</style>
+            40% {
+                box-shadow: 0 -2em;
+                height: 5em;
+            }
+        }
 
-<script src="https://kit.fontawesome.com/6ba4d7a7e7.js" crossorigin="anonymous"></script>
+        @keyframes load1 {
 
+            0%,
+            80%,
+            100% {
+                box-shadow: 0 0;
+                height: 4em;
+            }
 
-		<div class="spinner">
-  <div class="cube1"></div>
-  <div class="cube2"></div>
-</div>
-		<h2 style="font-size:30px">Redircting...</h2>
+            40% {
+                box-shadow: 0 -2em;
+                height: 5em;
+            }
+        }
+    </style>
+</head>
 
-	
-	
-	<meta http-equiv="refresh" content="0; URL='https://routinehub.co/user/dante_nl'" />
+<body>
+    <div class="loader">Loading...</div>
+    <p>
+        <meta http-equiv="refresh" content="0; URL='https://routinehub.co/user/dante_nl'">
+    </p>
+</body>
 
-
-	
-<div class="contacts">
+</html>
