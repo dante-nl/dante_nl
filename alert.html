@@ -68,10 +68,11 @@
 
 <body>
     <h2 id="name" style="text-align: center;">Alert:</h2>
+
     <script>
         const queryString = new URLSearchParams(window.location.search);
         const name = queryString.get('text');
-        document.getElementById('text').innerHTML = `Alert: ${name}`  
+        document.getElementById('text').innerHTML = `Alert: ${text}`  
     </script>
     <p style="text-align: center;"><a class="button" href="index.html">OK</a></p>
 </body>
