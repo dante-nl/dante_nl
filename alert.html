@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta property="og:title" content="dante_nl" />
+  	<meta property="og:title" content="dante_nl" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dante-nl.netlify.app/" />
     <meta property="og:image" content="https://dante-nl.netlify.app/wumpus.png" />
@@ -29,22 +29,51 @@
 
             /* Dark Mode */
         }
+
+        .button {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            padding: 12px 24px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background: #007bff;
+            background: -webkit-gradient(linear, left top, left bottom, from(#007bff), to(#007bff));
+            background: -moz-linear-gradient(top, #007bff, #007bff);
+            background: linear-gradient(to bottom, #007bff, #007bff);
+            font: normal normal bold 20px arial;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .button:hover,
+        .button:focus {
+            border: 1px solid #00a0ff;
+            background: #0094ff;
+            background: -webkit-gradient(linear, left top, left bottom, from(#0094ff), to(#0094ff));
+            background: -moz-linear-gradient(top, #0094ff, #0094ff);
+            background: linear-gradient(to bottom, #0094ff, #0094ff);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .button:active {
+            background: #004a99;
+            background: -webkit-gradient(linear, left top, left bottom, from(#004a99), to(#007bff));
+            background: -moz-linear-gradient(top, #004a99, #007bff);
+            background: linear-gradient(to bottom, #004a99, #007bff);
+        }
     </style>
 </head>
 
 <body>
-    <h1 style="text-align: center;">Alert</h1>
-    <h2 id="name" style="text-align: center;"><p style="text-align: center;"><br></p>
-        <p>
-            <meta http-equiv="refresh" content="0; URL='index'">
-        </p>
-        <script>
-            const queryString = new URLSearchParams(window.location.search);
-            const name = queryString.get('text');
-            document.getElementById('text').innerHTML = `${name}`
-            
-        </script>
-    </h2>
+    <h2 id="name" style="text-align: center;">Alert:</h2>
+    <script>
+        const queryString = new URLSearchParams(window.location.search);
+        const name = queryString.get('text');
+        document.getElementById('text').innerHTML = `Alert: ${name}`  
+    </script>
+    <p style="text-align: center;"><a class="button" href="index.html">OK</a></p>
 </body>
 
 </html>
