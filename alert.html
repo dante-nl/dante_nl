@@ -2,17 +2,7 @@
 <html>
 
 <head>
-    <title>Redirect</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<meta property="og:title" content="dante_nl" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://dante-nl.netlify.app/" />
-    <meta property="og:image" content="https://dante-nl.netlify.app/wumpus.png" />
-    <meta property="og:description" content="On this site you can get information about my Shortcuts and my other projects" />
+    <title>Alert | dante_nl</title>
     <style>
         body {
             background: white;
@@ -46,8 +36,7 @@
             text-decoration: none;
         }
 
-        .button:hover,
-        .button:focus {
+        .button:hover {
             border: 1px solid #00a0ff;
             background: #0094ff;
             background: -webkit-gradient(linear, left top, left bottom, from(#0094ff), to(#0094ff));
@@ -67,14 +56,13 @@
 </head>
 
 <body>
-  <p id="text" style="text-align: center;">Alert: </p>
-
+    <h1 id="text">Alert:</h1>
     <script>
         const queryString = new URLSearchParams(window.location.search);
         const name = queryString.get('text');
-        document.getElementById('text').innerHTML = `Alert: ${text}`  
+        document.getElementById('text').innerHTML = `Your name is ${text}`
     </script>
-    <p style="text-align: center;"><a class="button" href="index.html">OK</a></p>
+    <p><a class="button" href="index">OK</a></p>
 </body>
 
 </html>
