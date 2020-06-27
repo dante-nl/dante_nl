@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Redirect</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="dante_nl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dante-nl.netlify.app/" />
+    <meta property="og:image" content="https://dante-nl.netlify.app/wumpus.png" />
+    <meta property="og:description" content="On this site you can get information about my Shortcuts and my other projects" />
+    <style>
+        body {
+            background: white;
+            font-family: system-ui;
+            color: black
+        }
+
+        /* Light Mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #fff
+            }
+
+            /* Dark Mode */
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Alert</h1>
+    <h2 id="name" style="text-align: center;"><p style="text-align: center;"><br></p>
+        <p>
+            <meta http-equiv="refresh" content="0; URL='index'">
+        </p>
+        <script>
+            const queryString = new URLSearchParams(window.location.search);
+            const name = queryString.get('text');
+            document.getElementById('text').innerHTML = `${name}`
+            
+        </script>
+    </h2>
+</body>
+
+</html>
