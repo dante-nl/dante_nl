@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Info | dante_nl</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        body {
+            background: white;
+            font-family: system-ui;
+            color: black
+        }
+
+        /* Light Mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #fff
+            }
+
+            /* Dark Mode */
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="name">Data:</p>
+        
+<script>
+const queryString = new URLSearchParams(window.location.search);
+const name = queryString.get('alert');
+document.getElementById('alert').innerHTML = `Hello ${alert}`
+
+</script>
+</body>
+</html>
