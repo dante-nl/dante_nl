@@ -27,8 +27,8 @@
 <meta http-equiv="refresh" content="0; URL='index'">       
 <script>
 const queryString = new URLSearchParams(window.location.search);
-const name = queryString.get('text');
-document.getElementById('alert').innerHTML = `Data: ${text}`
+const text = queryString.get('text');
+document.getElementById('text').innerHTML = `Data: ${text}`
 
 </script>
 </body>
