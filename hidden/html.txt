@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+	<style>
+		body {
+			background: #F5F5F5;
+        	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        	color: black
+            }
+            
+        @media (prefers-color-scheme: dark) {
+        body {
+			background: #333;
+            color: #F5F5F5
+		}
+        .topnav {
+        background-color: #12355B;
+        }
+        .button { 
+        	display: inline-block; 
+            text-align: center; vertical-align: middle; 
+            padding: 12px 24px; border: 1px solid #43baff;
+            border-radius: 8px;background: #12355B; color: #F5F5F5;
+            } 
+        .button:hover { 
+        border: 1px solid #4dd6ff;
+        background: #16406d; color: #F5F5F5;
+        }
+        }
+            
+        .topnav {
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #43BBFF;
+            position: sticky;
+            top: 0px;
+        }    
+            
+        .topnav a {
+            float: left;
+            display: block;
+            color: #E0E0E0;
+            text-align: center;
+            padding: 12px 14px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+        }
+            
+        .button {
+    		display: inline-block;
+    		text-align: center;
+    		vertical-align: middle;
+    		padding: 12px 24px;
+    		border: 1px solid #43baff;
+    		border-radius: 8px;
+    		background: #43baff;
+    		color: #F5F5F5;
+		}
+		.button:hover {
+    		border: 1px solid #4dd6ff;
+    		background: #50dfff;
+    		color: #F5F5F5;
+		}
+	</style>
+</head>
+<body>
+<div class="topnav"> <a href="index" style="color: #F5F5F5">Home</a> <a href="https://dante-nl.netlify.app/cloudy/" style="float: right;">Discord</a> <a href="shortcuts" style="float: right;">View all articles</a></div>
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<a class="button" href="#">Text</a>
+
+</body>
+</html>
