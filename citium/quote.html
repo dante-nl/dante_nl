@@ -13,15 +13,19 @@
     </style>
 	
     <script>
-    const queryString = new URLSearchParams(window.location.search);
-        const text = queryString.get('text');
-        document.getElementById('text').innerHTML = `${text}`   
+        const queryString = new URLSearchParams(window.location.search);
+        const quote = queryString.get('quote');
+        document.getElementById('quote').innerHTML = `${quote}`
+				
+	const queryString = new URLSearchParams(window.location.search);
+        const author = queryString.get('author');
+        document.getElementById('author').innerHTML = `${author}` 
     </script>
 </head>
 
 <body>
-    <h1 id="text" style="text-align: center;"><br></h1>
-	<h2 id="author" style="text-align: center;"><br></h2>
+	<h1 id="quote" style="text-align: center;"><var>quote</var></h1>
+	<h2 id="author" style="text-align: center;"><var>author</var></h2>
 </body>
 
 </html>
