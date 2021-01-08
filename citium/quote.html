@@ -15,12 +15,12 @@
 </head>
 
 <body>
-    <h1 id="text" style="text-align: center;"><br></h1>
+    <h1 id="quote" style="text-align: center;"><br></h1>
     <h2 id="author" style="text-align: center;"><br></h2>
     <script>
         const queryString = new URLSearchParams(window.location.search);
-        const text = queryString.get('quote');
-        document.getElementById('text').innerHTML = `${text}`  
+        const quote = queryString.get('quote');
+        document.getElementById('quote').innerHTML = `${quote}`  
 	
 	const author = queryString.get('author');
         document.getElementById('author').innerHTML = `${author}` 
