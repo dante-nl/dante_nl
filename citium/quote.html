@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Info | dante_nl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+ body {
+ 		background: #000
+		color: #fff
+		font-family: system-ui
+    </style>
+</head>
+
+<body>
+    <h1 id="quote" style="text-align: center;"><br></h1>
+		<h2 id="author" style="text-align: center;"<br></h2>
+    <script>
+        const queryString = new URLSearchParams(window.location.search);
+        const text = queryString.get('quote');
+        document.getElementById('quote').innerHTML = `${quote}`
+				
+				const queryString = new URLSearchParams(window.location.search);
+        const text = queryString.get('author');
+        document.getElementById('author').innerHTML = `${author}` 
+    </script>
+</body>
+
+</html>
