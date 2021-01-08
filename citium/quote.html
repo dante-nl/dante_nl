@@ -2,30 +2,24 @@
 <html>
 
 <head>
-    <title>Quote</title>
+    <title>Info | dante_nl</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
- body {
- 		background-color: #000;
-		color: #fff;
-		font-family: system-ui;
-	 	vertical-align: middle;
+        body {
+            background: black;
+            font-family: system-ui;
+            color: white
+        }
     </style>
-	
-    <script>
-        const quote = new URLSearchParams(window.location.search);
-        const quote = queryString.get('quote');
-        document.getElementById('quote').innerHTML = `${quote}`
-				
-	const queryString = new URLSearchParams(window.location.search);
-        const author = queryString.get('author');
-        document.getElementById('author').innerHTML = `${author}` 
-    </script>
 </head>
 
 <body>
-	<h1 id="quote" style="text-align: center;"><script>var quote</script></h1>
-	<h2 id="author" style="text-align: center;"><var>author</var></h2>
+    <h1 id="quote" style="text-align: center;"><br></h1>
+    <script>
+        const queryString = new URLSearchParams(window.location.search);
+        const quote = queryString.get('quote');
+        document.getElementById('text').innerHTML = `${quote}`     
+    </script>
 </body>
 
 </html>
