@@ -14,11 +14,11 @@
 	
     <script>
         const queryString = new URLSearchParams(window.location.search);
-        const text = queryString.get('quote');
+        const quote = queryString.get('quote');
         document.getElementById('quote').innerHTML = `${quote}`
 				
 	const queryString = new URLSearchParams(window.location.search);
-        const text = queryString.get('author');
+        const author = queryString.get('author');
         document.getElementById('author').innerHTML = `${author}` 
     </script>
 </head>
