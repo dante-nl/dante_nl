@@ -2,23 +2,24 @@
 <html>
 
 <head>
-    <title>Info | dante_nl</title>
+    <title>Citium quote</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background: black;
             font-family: system-ui;
-            color: white
+            color: white;
+			vertical-align: middle;
         }
     </style>
 </head>
 
 <body>
-    <h1 id="quote" style="text-align: center;"><br></h1>
+    <h1 id="text" style="text-align: center;"><br></h1>
     <script>
         const queryString = new URLSearchParams(window.location.search);
-        const quote = queryString.get('quote');
-        document.getElementById('text').innerHTML = `${quote}`     
+        const text = queryString.get('text');
+        document.getElementById('text').innerHTML = `${text}`     
     </script>
 </body>
 
