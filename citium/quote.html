@@ -13,10 +13,9 @@
     </style>
 	
     <script>
-        const queryString = new URLSearchParams(window.location.search);
-        var quote = queryString.get('quote');
+        const quote = new URLSearchParams(window.location.search);
+        const quote = queryString.get('quote');
         document.getElementById('quote').innerHTML = `${quote}`
-	document.write(quote)
 				
 	const queryString = new URLSearchParams(window.location.search);
         const author = queryString.get('author');
