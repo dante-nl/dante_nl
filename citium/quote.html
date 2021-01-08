@@ -13,14 +13,14 @@
     </style>
 	
     <script>
-        const queryString = new URLSearchParams(window.location.search);
-        const one = queryString.get('one');
-        document.getElementById('one').innerHTML = `${one}` 
+    const queryString = new URLSearchParams(window.location.search);
+        const text = queryString.get('text');
+        document.getElementById('text').innerHTML = `${text}`   
     </script>
 </head>
 
 <body>
-    <h1 id="one" style="text-align: center;"><br></h1>
+    <h1 id="text" style="text-align: center;"><br></h1>
 	<h2 id="author" style="text-align: center;"><br></h2>
 </body>
 
