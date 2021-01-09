@@ -30,6 +30,14 @@
 	
 	const author = queryString.get('author');
         document.getElementById('author').innerHTML = `${author}` 
+	
+	const swapValue = (obj) => {
+   Object.keys(obj).forEach(key => {
+      if(!obj[key]){
+         obj[key] = 'No value';
+      }
+   });
+};
     </script>
 </body>
 
