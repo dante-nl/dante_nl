@@ -21,8 +21,8 @@
 </head>
 
 <body>
-    <h1 id="quote">No quote given</h1>
-    <h2 id="author">No author given</h2>
+    <h1 id="quote">Something went wrong on the quote side</h1>
+    <h2 id="author">Something went wrong on the author side</h2>
     <script>
         const queryString = new URLSearchParams(window.location.search);
         const quote = queryString.get('quote');
@@ -38,9 +38,6 @@
 	const swapValue = (author) => {
       	if(!author){
          author = 'No value';
-      }
-   });
-};
     </script>
 </body>
 
