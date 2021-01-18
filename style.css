@@ -1,14 +1,16 @@
 body {
             background: white;
             font-family: system-ui;
-            color: black
+            color: black;
+            text-align: center;
         }
 
         /* Light Mode */
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #333;
-                color: #fff
+                color: #fff;
+            text-align: center;
             }
 
             /* Dark Mode */
