@@ -214,7 +214,32 @@ animation: fadeIn ease 2s;
     <p style="text-align: center;"><a class="discord" href="discord" rel="noopener noreferrer" target="_blank">Join Discord</a></p>
     <p style="text-align: center;"><a class="mail" href="mailto:dante_nl@icloud.com" rel="noopener noreferrer" target="_blank">Send an e-mail</a></p>
     <p style="text-align: center;"><a class="shortcuts" href="shortcuts">Shortcuts</a></p>
-      <p style="text-align: center;"><a class="classic" href="3d">Get to the HTML Basics</a></p>
+ <h1>Time until deletion of the TestPilot server. Please join the new Discord server to talk there</h1>
+ <h2 id="countdown"></h2>
+
+<script>
+var countDownDate = new Date("Jan 20, 2021 16:00:00").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+    
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "The server will be deleted later today. Thanks for joining.";
+  }
+}, 1000);
+</script>
     </div>
 </body>
 
