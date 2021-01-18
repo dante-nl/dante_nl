@@ -187,7 +187,7 @@ animation: fadeIn ease 2s;
 }
 
 .collapsible {
-  background-color: #7289DA;
+  background-color: #007aff;
   color: white;
   cursor: pointer;
   padding: 18px;
@@ -200,7 +200,7 @@ animation: fadeIn ease 2s;
 }
 
 .active, .collapsible:hover {
-  background-color: #8ea1e1;
+  background-color: #3395ff;
 }
 
 .content {
