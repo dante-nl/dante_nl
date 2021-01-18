@@ -154,6 +154,11 @@ body {
     background: linear-gradient(to bottom, #982727, #982727);
 }
 
+a {
+	text-decoration: none;
+    color: #007aff
+}
+
 .fade-in {
 animation: fadeIn ease 2s;
 -webkit-animation: fadeIn ease 2s;
