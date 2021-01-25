@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Collage</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="dante_nl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://dante-nl.netlify.app/wumpus.png" />
+    <meta property="og:description" content="Collage voor school | School collage, feel free to ignore3 ;)" />
+    <meta property="theme-color" content="#7289DA" />
+    <link rel="stylesheet" href="https://dante-nl.netlify.app/style.css" />
+
+    <style>
+      img {
+        border: 3px solid #7289DA;
+        border-radius: 8px;
+      }
+
+      * {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+      </style>
+  </head>
+  <body>
+    <h1>Collage</h1>
+    <div class="column">
+    <img src="https://dantenl.tk/school/ipad_setup.jpg" alt="iPad setup" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://dantenl.tk/school/teams_setup.jpg" alt="Teams setup" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://dantenl.tk/school/computer_setup.jpg" alt="Computer setup" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://dantenl.tk/school/eten.png" alt="Eten" style="width:100%">
+  </div>
+  </body>
+</html>
