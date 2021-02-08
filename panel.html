@@ -17,14 +17,16 @@
         body {
             background: white;
             font-family: system-ui;
-            color: black
+            color: black;
+            text-align: center;
         }
 
         /* Light Mode */
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #333;
-                color: #fff
+                color: #fff;
+                text-align: center;
             }
 
             /* Dark Mode */
@@ -89,7 +91,6 @@
 </head>
 
 <body>
-    <h1 style="text-align: center;">Redirecting you to dante-nl.netlify.app...</h1>
     <div class="sk-chase">
   <div class="sk-chase-dot"></div>
   <div class="sk-chase-dot"></div>
@@ -100,12 +101,6 @@
 </div>
     <p>
   </p>
-  <h1 id="text" style="text-align: center;"><br></h1>
-    <script>
-        const queryString = new URLSearchParams(window.location.search);
-        const url = queryString.get('url');
-        document.getElementById('url').innerHTML = `${url}?name=Test`     
-    </script>
 </body>
 
 </html>
