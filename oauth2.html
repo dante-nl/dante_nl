@@ -52,6 +52,16 @@ const randStr = generateRandomString();
 localStorage.setItem('stateParameter', randStr);
 
 document.getElementById('login').href += `&state=${btoa(randStr)}`;
+		
+const fragment = new URLSearchParams(window.location.hash.slice(1));
+
+if (fragment.has('access_token')) {
+	const urlState = fragment.get('state');
+	const stateParameter = localStorage.getItem('stateParameter');
+	if (stateParameter !== atob(decodeURIComponent(urlState))) {
+		return console.log('You may have been clickjacked!');
+	}
+}
 	</script>
 </body>
 </html>
