@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>My First OAuth2 App</title>
@@ -6,46 +7,32 @@
 	<div id="info">
 		Hoi!
 	</div>
-	<a id="login" style="display: none;" href="https://discord.com/api/oauth2/authorize?client_id=809763547823210537&redirect_uri=https%3A%2F%2Fdantenl.tk%2Foauth2&response_type=code&scope=identify">Identify Yourself</a>
+	<a id="login" style="display: none;" href="your oauth2 url here">Identify Yourself</a>
 	<script>
-		const url = require('url');
+		window.onload = () => {
+			const fragment = new URLSearchParams(window.location.hash.slice(1));
 
-// ...
+			if (fragment.has("access_token")) {
+				const accessToken = fragment.get("access_token");
+				const tokenType = fragment.get("token_type");
 
-const urlObj = url.parse(req.url, true);
+				fetch('https://discord.com/api/users/@me', {
+					headers: {
+						authorization: `${tokenType} ${accessToken}`
+					}
+				})
+					.then(res => res.json())
+					.then(response => {
+						const { username, discriminator } = response;
+						document.getElementById('info').innerText += ` ${username}#${discriminator}`;
+					})
+					.catch(console.error);
 
-if (urlObj.query.code) {
-	const accessCode = urlObj.query.code;
-	console.log(`The access code is: ${accessCode}`);
-}
-
-if (urlObj.pathname === '/') {
-	responseCode = 200;
-	content = fs.readFileSync('./index.html');
-}
-		
-const fetch = require('node-fetch');
-
-// ...
-
-const data = {
-	client_id: '809763547823210537',
-	client_secret: 'z9XgOYPskWhgSJH8l1PWT4mRl7-mrZ8S',
-	grant_type: 'authorization_code',
-	redirect_uri: 'https://dantenl.tk/oauth2',
-	code: accessCode,
-	scope: 'identify',
-};
-
-fetch('https://discord.com/api/oauth2/token', {
-	method: 'POST',
-	body: new URLSearchParams(data),
-	headers: {
-		'Content-Type': 'application/x-www-form-urlencoded',
-	},
-})
-	.then(res => res.json())
-	.then(console.log);
+			}
+			else {
+				document.getElementById('login').style.display = 'block';
+			}
+		}
 	</script>
 </body>
 </html>
