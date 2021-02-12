@@ -62,6 +62,29 @@ if (fragment.has('access_token')) {
 		return console.log('You may have been clickjacked!');
 	}
 }
+		
+const fetch = require('node-fetch');
+
+// ...
+
+const data = {
+	client_id: '809763547823210537',
+	client_secret: 'z9XgOYPskWhgSJH8l1PWT4mRl7-mrZ8S',
+	grant_type: 'authorization_code',
+	redirect_uri: 'https://dantenl.tk/oauth2',
+	code: accessCode,
+	scope: 'identify',
+};
+
+fetch('https://discord.com/api/oauth2/token', {
+	method: 'POST',
+	body: new URLSearchParams(data),
+	headers: {
+		'Content-Type': 'application/x-www-form-urlencoded',
+	},
+})
+	.then(res => res.json())
+	.then(console.log);
 	</script>
 </body>
 </html>
