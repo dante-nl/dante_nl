@@ -1,117 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Welcome to ShortMail!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <body onload="byeee();"></body>
-    <style>
-      @media (prefers-color-scheme: dark) {
-        body {
-          color: white;
-          background: #1a1a1a;
-          text-align: left;
-          font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to ShortMail!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <body onload="byeee();"></body>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: white;
+          background: #1a1a1a;
+          text-align: left;
+          font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
 
-
-    input {
-      border-radius: 8px;
-      border: 3px solid #007aff;
-      color: white;
-      background: none;
-    }
-      }
-
-
-      @media (prefers-color-scheme: light) {
-        body {
-          color: black;
-          background: #e6e6e6;
-          text-align: left;
-          font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        }
+		input {
+			border-radius: 8px;
+			border: 3px solid #007aff;
+			color: white;
+			background: none;
+		}
       }
 
+      @media (prefers-color-scheme: light) {
+        body {
+          color: black;
+          background: #e6e6e6;
+          text-align: left;
+          font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
 
-    input {
-      border-radius: 8px;
-      border: 3px solid #007aff;
-      color: white;
-      background: none;
-    
-      }
+		input {
+			border-radius: 8px;
+			border: 3px solid #007aff;
+			color: white;
+			background: none;
+		}
+      }
 
+      .button {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            padding: 12px 24px;
+            border-radius: 8px;
+            background: #007aff;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-      .button {
-            display: inline-block;
-            text-align: center;
-            vertical-align: middle;
-            padding: 12px 24px;
-            border-radius: 8px;
-            background: #007aff;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        .button:hover,
+        .button:focus {
+            background: #3396FF;
+            color: #ffffff;
+            text-decoration: none;
+        }
 
+    </style>
+  </head>
+  <body>
+    <h1>Hi 👋</h1>
+    <h1>Welcome to <span style="color: #15B8F6;">ShortMail</span>!</h1>
+    <p>ShortMail is a Shortcut to receive mails that other Shortcuts might want to send to you don't get spammed with stuff you don't want and you don't need to give your e-mail address to Shortcuts!</p>
+    <h3>How does it work?</h3>
+    <p>For the first time, the Shortcut that wants to send you a ShortMail, makes a profile with the name, icon (optional), nickname and a short description. Once this is setup, you get an automatic ShortMail from ShortMail to let you know that a Shortcut has permission to send you ShortMails and the requesting Shortcut will receive a code from ShortMail. Only with that code a mail from that Shortcut can be send.</p>
+    <h3>Ready?</h3>
+    <p id="hideme"><a class="button" href="shortcuts://run-shortcut?name=ShortMail&input=setup:infin">Set it up with Sign in with &infin;</a> or <a class="button" href="javascript:show()">Set it up here</a></p>
+    <form id="blub" action="javascript:submit()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <p id="error1"></p>
+      <label for="email">E-mail address:</label>
+      <input type="text" id="email" name="email">
+      <p id="error2"></p>
+    <p><input class="button" type="submit" value="Setup"> or <a class="button" href="shortcuts://run-shortcut?name=ShortMail&input=setup:infin">Set it up with Sign in with &infin;</a></p>
+    </form>
+    <script>
+      function show() {
+        var x = document.getElementById("blub");
+        x.style.display = "block";
+        var y = document.getElementById("hideme");
+        y.style.display = "none";
+      }
 
-        .button:hover,
-        .button:focus {
-            background: #3396FF;
-            color: #ffffff;
-            text-decoration: none;
-        }
+      function byeee() {
+        var x = document.getElementById("blub");
+        x.style.display = "none";
+      }
 
-
-    </style>
-  </head>
-  <body>
-    <h1>Hi &#128075;</h1>
-    <h1>Welcome to <span style="color: #15B8F6;">ShortMail</span>!</h1>
-    <p>ShortMail is a Shortcut to receive mails that other Shortcuts might want to send to you don't get spammed with stuff you don't want and you don't need to give your e-mail address to Shortcuts!</p>
-    <h3>How does it work?</h3>
-    <p>For the first time, the Shortcut that wants to send you a ShortMail, makes a profile with the name, icon (optional), nickname and a short description. Once this is setup, you get an automatic ShortMail from ShortMail to let you know that a Shortcut has permission to send you ShortMails and the requesting Shortcut will receive a code from ShortMail. Only with that code a mail from that Shortcut can be send.</p>
-    <h3>Ready?</h3>
-    <p id="hideme"><a class="button" href="shortcuts://run-shortcut?name=ShortMail&input=setup:infin">Set it up with Sign in with &infin;</a> or <a class="button" href="javascript:show()">Set it up here</a></p>
-    <form id="blub" action="javascript:submit()">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-      <p id="error1"></p>
-      <label for="email">E-mail address:</label>
-      <input type="text" id="email" name="email">
-      <p id="error2"></p>
-    <p><input class="button" type="submit" value="Setup"> or <a class="button" href="shortcuts://run-shortcut?name=ShortMail&input=setup:infin">Set it up with Sign in with &infin;</a></p>
-    </form>
-    <script>
-      function show() {
-        var x = document.getElementById("blub");
-        x.style.display = "block";
-        var y = document.getElementById("hideme");
-        y.style.display = "none";
-      }
-
-
-      function byeee() {
-        var x = document.getElementById("blub");
-        x.style.display = "none";
-      }
-
-
-      function submit() {
-        var email = document.getElementById("email").value
-        var name1 = document.getElementById("name").value
-        if (name1 == null || name1 == "") {
-          document.getElementById('error1').innerHTML = `<p style="color: #ff2d55;">That name is not valid!</p>`
-        } else {
-          document.getElementById('error1').innerHTML = ``
-        } if (email == null || email == "") {
-            document.getElementById('error2').innerHTML = `<p style="color: #ff2d55;">That e-mail address is not valid!</p>`
-        } else {
-          document.getElementById('error2').innerHTML = ``
-          window.location.replace(`shortcuts://run-shortcut?name=ShortMail&input=setup:name=${name1},email=${email}`);
-        }
-      }
-    </script>
-  </body>
+      function submit() {
+        var email = document.getElementById("email").value
+        var name1 = document.getElementById("name").value
+        if (name1 == null || name1 == "") {
+          document.getElementById('error1').innerHTML = `<p style="color: #ff2d55;">That name is not valid!</p>`
+        } else {
+          document.getElementById('error1').innerHTML = ``
+        } if (email == null || email == "") {
+            document.getElementById('error2').innerHTML = `<p style="color: #ff2d55;">That e-mail address is not valid!</p>`
+        } else {
+          document.getElementById('error2').innerHTML = ``
+          window.location.replace(`shortcuts://run-shortcut?name=ShortMail&input=setup:name=${name1},email=${email}`);
+        }
+      }
+    </script>
+  </body>
 </html>
