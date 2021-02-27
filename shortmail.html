@@ -34,6 +34,8 @@
 			border: 3px solid #007aff;
 			color: black;
 			background: none;
+			-webkit-appearance: none;
+			border-radius: 0;
 		}
       }
 
@@ -56,28 +58,6 @@
             text-decoration: none;
         }
 	    
-	button {
-            display: inline-block;
-            text-align: center;
-            vertical-align: middle;
-            padding: 12px 24px;
-            border-radius: 8px;
-            background: #007aff;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-	    -webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-        }
-
-        button:hover,
-        button:focus {
-            background: #3396FF;
-            color: #ffffff;
-            text-decoration: none;
-        }
-
     </style>
   </head>
   <body>
@@ -95,7 +75,7 @@
       <label for="email">E-mail address:</label>
       <input type="text" id="email" name="email">
       <p id="error2"></p>
-    <p><button type="submit"> or <a class="button" href="shortcuts://run-shortcut?name=ShortMail&input=setup:infin">Set it up with Sign in with &infin;</a></p>
+    <p><input type="submit"> or <a class="button" href="shortcuts://run-shortcut?name=ShortMail&input=setup:infin">Set it up with Sign in with &infin;</a></p>
     </form>
     <script>
       function show() {
