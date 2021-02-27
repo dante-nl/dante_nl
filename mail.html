@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>ShortMail</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://dantenl.tk/shortstyle.css" />
+</head>
+
+<body>
+	<div class="bar">
+		<strong>Subject:</strong>
+		<span id="subject">error</span>
+		<strong>From: </strong>
+		<span id="badge"></span>
+		<span id="sender">Error!</span>
+	</div>
+
+	<p id="info">Error.</p>
+
+	<p id="content">uwuw error</p>
+
+	<script>
+		const queryString = new URLSearchParams(window.location.search);
+		const badge = queryString.get('badge');
+		if (badge == "v") {
+			document.getElementById('badge').innerHTML = `<span class="verifiedbadge"><span class="check"></span>Verified</span>`
+			var x = document.getElementById("info")
+			x.style.display = "none"
+		}
+		else if (badge == "s") {
+			document.getElementById('badge').innerHTML = `<span class="systembadge">SYSTEM</span>`
+			document.getElementById('info').innerHTML = `<span class="info"><strong>This is a message sent by ShortMail</strong></span><br>`
+		} else {
+			document.getElementById('badge').innerHTML = `&zwnj;`
+			var x = document.getElementById("info")
+			x.style.display = "none"
+		}
+
+		const sender = queryString.get('sender');
+			if (sender) {
+				if (badge == "s" || badge == "v") {
+					document.getElementById('sender').innerHTML = `${sender}`
+				} else {
+					document.getElementById('sender').innerHTML = `<span style="margin-left:5px">${sender}</span>`
+				}
+			}
+			 else {
+				 if (badge == "s" || badge == "v") {
+					 document.getElementById('sender').innerHTML = `No sender!`
+				 } else {
+					 document.getElementById('sender').innerHTML = `<span style="margin-left:5px">No sender!</span>`
+				 }					
+			}
+
+			const subject = queryString.get('subject');
+				if (sender) {
+					document.getElementById('subject').innerHTML = `<span style="margin-left:5px">${subject}</span><span style="margin-left:5px"></span>`
+				}
+				else {
+					document.getElementById('subject').innerHTML = `<span style="margin-left:5px">No subject</span><span style="margin-left:5px"></span>`
+				}
+
+			const content = queryString.get('content');
+				if (content) {
+					document.getElementById('content').innerHTML = `${content}`
+				}
+				else {
+					document.getElementById('content').innerHTML = `No content was given!`
+				}
+	</script>
+</body>
+
+</html>
