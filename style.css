@@ -215,3 +215,32 @@ animation: fadeIn ease 2s;
   border-radius: 8px;
   border: 3px solid #007aff;
 }
+
+.alert {
+  padding: 20px;
+  background-color: #f94144;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.alert.success {background-color: #43aa8b;}
+.alert.info {background-color: #0077b6;}
+.alert.warning {background-color: #f8961e;}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
