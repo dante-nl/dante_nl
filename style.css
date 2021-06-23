@@ -1,229 +1,147 @@
+/* ⬇️ Design */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+@media(prefers-color-scheme: dark) {
+	body {
+		background-color: #1a1a1a !important;
+		color: #fff !important;
+	}
+}
+
 body {
-            background: white;
-            font-family: system-ui;
-            color: black;
-            text-align: center;
-        }
+	background-color: #e6e6e6;
+	color: #000;
+	font-family: 'Open Sans', sans-serif;
 
-        /* Light Mode */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #333;
-                color: #fff;
-            text-align: center;
-            }
+}
 
-            /* Dark Mode */
-        }
+ a {
+	color: #7289da;
+	text-decoration: none;
+ }
 
-        .topnav {
-            overflow: hidden;
-            border-radius: 8px;
-            background-color: #1F1F1F;
-            position: sticky;
-            top: 0px;
-        }
+ a:hover {
+	text-decoration: underline;
+ }
 
-        .topnav a {
-            float: left;
-            display: block;
-            color: #AAAAAA;
-            text-align: center;
-            padding: 12px 14px;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 400;
-        }
+ .dante_nl {
+	background: #7289DA;
+	background: -webkit-linear-gradient(to right, #7289DA 0%, #5865f2 100%);
+	background: -moz-linear-gradient(to right, #7289DA 0%, #5865f2 100%);
+	background: linear-gradient(to right, #7289DA 0%, #5865f2 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+ }
 
-        .button {
-            display: inline-block;
-            text-align: center;
-            vertical-align: middle;
-            padding: 12px 24px;
-            border: 1px solid #000000;
-            border-radius: 8px;
-            background: #000000;
-            color: #ffffff;
-            text-decoration: none;
-            border: 3px solid #D8D8D8;
-            font: normal normal bold 20px system-ui;
-        }
+ hr {
+	background: linear-gradient(to right, #7289DA, #5865f2);
+  	height: 2px;
+	border: none;
+	border-radius: 8px;
+ }
 
-        .button:hover {
-            border: 1px solid #1F1F1F;
-            background: #333;
-            color: #ffffff;
-            text-decoration: none;
-            border: 3px solid #D8D8D8;
-        }
-
-        .discord {
-            display: inline-block;
-            text-align: center;
-            vertical-align: middle;
-            padding: 12px 24px;
-            border-radius: 8px;
-            background: #7288da;
-            color: #ffffff;
-            text-decoration: none;
-            font: normal normal bold 20px system-ui;
-        }
-
-        .discord:hover {
-            background: #89a3ff;
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .mail {
-            display: inline-block;
-            text-align: center;
-            vertical-align: middle;
-            padding: 12px 24px;
-            border-radius: 8px;
-            background: #007aff;
-            color: #ffffff;
-            text-decoration: none;
-            font: normal normal bold 20px system-ui;
-        }
-
-        .mail:hover {
-            background: #3396FF;
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .shortcuts {
-            display: inline-block;
-            text-align: center;
-            vertical-align: middle;
-            padding: 12px 24px;
-            border: 0px solid #ac4c6f;
-            border-radius: 8px;
-            background: #d75f8b;
-            background: -webkit-gradient(linear, left top, left bottom, from(#d75f8b), to(#2e9cbd));
-            background: -moz-linear-gradient(top, #d75f8b, #2e9cbd);
-            background: linear-gradient(to bottom, #d75f8b, #2e9cbd);
-            color: #ffffff;
-            text-decoration: none;
-            font: normal normal bold 20px system-ui;
-        }
-
-        .shortcuts:hover {
-            border: 0px solid #d75f8b;
-            background: #ff72a7;
-            background: -webkit-gradient(linear, left top, left bottom, from(#ff72a7), to(#37bbe3));
-            background: -moz-linear-gradient(top, #ff72a7, #37bbe3);
-            background: linear-gradient(to bottom, #ff72a7, #37bbe3);
-            color: #ffffff;
-            text-decoration: none;
-        }
-        
-        .classic {
+ .discordcopy {
     display: inline-block;
     text-align: center;
     vertical-align: middle;
     padding: 12px 24px;
-    border: 1px solid #a12727;
     border-radius: 8px;
-    background: #ff4a4a;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff4a4a), to(#992727));
-    background: -moz-linear-gradient(top, #ff4a4a, #992727);
-    background: linear-gradient(to bottom, #ff4a4a, #992727);
-    -webkit-box-shadow: #ff5959 0px 0px 40px 0px;
-    -moz-box-shadow: #ff5959 0px 0px 40px 0px;
-    box-shadow: #ff5959 0px 0px 40px 0px;
-    text-shadow: #591717 1px 1px 1px;
-    font: normal normal bold 20px times new roman;
+    background: #7289DA;
+	background: -webkit-linear-gradient(to right, #7289DA 0%, #5865f2 100%);
+	background: -moz-linear-gradient(to right, #7289DA 0%, #5865f2 100%);
+	background: linear-gradient(to right, #7289DA 0%, #5865f2 100%);
+    color: #ffffff;
+    text-decoration: none;
+	margin-left: 5px;
+}
+.discordcopy:hover,
+.discordcopy:focus {
+    background: #8095de;
+	background: -webkit-linear-gradient(to right, #8095de 0%, #6974f3 100%);
+	background: -moz-linear-gradient(to right, #8095de 0%, #6974f3 100%);
+	background: linear-gradient(to right, #8095de 0%, #6974f3 100%);
     color: #ffffff;
     text-decoration: none;
 }
-.classic:hover,
-.classic:focus {
-    background: #ff5959;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff5959), to(#b62f2f));
-    background: -moz-linear-gradient(top, #ff5959, #b62f2f);
-    background: linear-gradient(to bottom, #ff5959, #b62f2f);
+
+ .discordjoin {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #3ba55d;
+	background: -webkit-linear-gradient(to right, #3ba55d 0%, #359554 100%);
+	background: -moz-linear-gradient(to right, #3ba55d 0%, #359554 100%);
+	background: linear-gradient(to right, #3ba55d 0%, #359554 100%);
+    color: #ffffff;
+    text-decoration: none;
+	margin-left: 5px;
+}
+.discordjoin:hover,
+.discordjoin:focus {
+    background: #62b77d;
+	background: -webkit-linear-gradient(to right, #62b77d 0%, #4fae6d 100%);
+	background: -moz-linear-gradient(to right, #62b77d 0%, #4fae6d 100%);
+	background: linear-gradient(to right, #62b77d 0%, #4fae6d 100%);
     color: #ffffff;
     text-decoration: none;
 }
-.classic:active {
-    background: #982727;
-    background: -webkit-gradient(linear, left top, left bottom, from(#982727), to(#982727));
-    background: -moz-linear-gradient(top, #982727, #982727);
-    background: linear-gradient(to bottom, #982727, #982727);
+
+.rhbutton {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #4ea699;
+	background: -webkit-linear-gradient(to right, #4ea699 0%, #346f66 100%);
+	background: -moz-linear-gradient(to right, #4ea699 0%, #346f66 100%);
+	background: linear-gradient(to right, #4ea699 0%, #346f66 100%);
+    color: #ffffff;
+    text-decoration: none;
+	margin-left: 5px;
+}
+.rhbutton:hover,
+.rhbuttonn:focus {
+    background: #60afa3;
+	background: -webkit-linear-gradient(to right, #60afa3 0%, #487d75 100%);
+	background: -moz-linear-gradient(to right, #60afa3 0%, #487d75 100%);
+	background: linear-gradient(to right, #60afa3 0%, #487d75 100%);
+    color: #ffffff;
+    text-decoration: none;
 }
 
-a {
-	text-decoration: none;
-    color: #007aff
+.ghbutton {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #000;
+    color: #ffffff;
+    text-decoration: none;
+	margin-left: 5px;
+	opacity: 80%;
 }
-
-.fade-in {
-animation: fadeIn ease 2s;
--webkit-animation: fadeIn ease 2s;
--moz-animation: fadeIn ease 2s;
--o-animation: fadeIn ease 2s;
--ms-animation: fadeIn ease 2;
-}
-@keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
-}
-
-@-moz-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
-}
-
-@-webkit-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
-}
-
-@-o-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
-}
-
-@-ms-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
-}
-
-.collapsible {
-  background-color: #007aff;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  border-radius: 8px
-}
-
-.active, .collapsible:hover {
-  background-color: #3395ff;
-}
-
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 3px solid #007aff;
+.ghbutton:hover,
+.ghbuttonn:focus {
+    background: #000;
+    color: #ffffff;
+    text-decoration: none;
+	opacity: 70%;
 }
 
 .alert {
-  padding: 20px;
-  background-color: #f94144;
-  color: white;
-  opacity: 1;
-  transition: opacity 0.6s;
-  margin-bottom: 15px;
-  border-radius: 8px;
+padding: 20px;
+background-color: #f94144;
+color: white;
+opacity: 1;
+transition: opacity 0.6s;
+margin-bottom: 15px;
+border-radius: 8px;
 }
 
 .alert.success {background-color: #43aa8b;}
@@ -231,16 +149,39 @@ animation: fadeIn ease 2s;
 .alert.warning {background-color: #f8961e;}
 
 .closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
 .closebtn:hover {
-  color: black;
+	color: black;
+}
+/* ⬇️ Layout */
+
+ .split {
+	height: 100%;
+	width: 50%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.left {
+	left: 0;
+	text-align: left;
+}
+
+.right {
+	right: 0;
+	text-align: right;
+	border-left: 3px solid  #7289DA;
+	padding-right: 5px;
 }
