@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>dante_nl</title>
+	<title>dante_nl (Beta)</title>
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -10,53 +10,120 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:title" content="dante_nl" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://dante-nl.netlify.app/" />
-	<meta property="og:image" content="https://dante-nl.netlify.app/wumpus.png" />
+	<meta property="og:url" content="https://dantenl.tk" />
+	<meta property="og:image" content="https://dantenl.tk/goodwumpus.png" />
 	<meta property="og:description"
-		content="On this site you can get information about my Shortcuts and my other projects" />
+		content="Here you can open links to other websites like my RoutineHub (rhub.tk?u=dante_nl) or my Discord (/discord). Now all with a fresh new design!" />
 	<meta property="theme-color" content="#7289DA" />
 	<link rel="stylesheet" href="style.css" />
+	<meta charset="utf-8" />
+	<script>
+		/* Mobile redirect */
+		if (screen.width <= 699) { 
+			if(window.location.pathname == "/mobile.html") {
+				exit();
+			} else {
+				document.location="mobile.html" ;
+			}
+		} 
+		else {
+			if(window.location.pathname == "/index.html") {
+				exit();
+			} else {
+				document.location="index.html" ; 
+			}
+		}
+
+		/* Check if FileSaver works */
+		try {
+			var isFileSaverSupported = !!new Blob;
+		} catch (e) { 
+			var oldbrowser = document.getElementById("oldbrowser");
+			oldbrowser.style.display = "block";
+		}
+	</script>
 </head>
-
 <body>
-	<div class="alert success">
-		<span class="closebtn">&times;</span>
-		<strong>Yay!</strong> Redesign coming soon!
+	
+	<div class="split left">
+	<div class="alert" id="oldbrowser" style="display: none;">
+		<strong>Hey!</strong> The file saving function doesn't work in your browser, so if there is an announcement to show here, you can't permantly close it!
 	</div>
-	<div class="topnav" id="navbar"><a href="https://dantenl.tk"
-			style="text-decoration: none; color: #FFFFFF; float: left;">Home</a><a href="https://dantenl.tk/shortcuts"
-			style="text-decoration: none; color: #AAAAAA; float: right;">Shortcuts</a><a
-			href="https://evolution.dantenl.tk" style="text-decoration: none; color: #AAAAAA; float: right;">Project
-			Evolution</a></div>
-	<div class="fade-in">
-
-		<h1 style="text-align: center;">I got Nitro again! dante_nl#0001</h1>
-		<h1 style="text-align: center;"><span style="color:#D75F8C;">d</span><span style="color:#AC6E98;">a</span><span
-				style="color:#827DA4;">n</span><span style="color:#588CB0;">t</span><span
-				style="color:#2E9CBD;">e</span><span style="color:#2F92C3;">_</span><span
-				style="color:#3088CA;">n</span><span style="color:#317ED0;">l</span></h1>
-		<h2 style="text-align: center;">On this site you can get information about my Shortcuts and my other projects!
-		</h2>
-		<p style="text-align: center;"><a class="button" href="routinehub" rel="noopener noreferrer"
-				target="_blank">RoutineHub</a></p>
-		<p style="text-align: center;"><a class="discord" href="discord" rel="noopener noreferrer" target="_blank">Join
-				Discord</a></p>
-		<p style="text-align: center;"><a class="mail" href="mailto:dante_nl@icloud.com" rel="noopener noreferrer"
-				target="_blank">Send an e-mail</a></p>
-		<p style="text-align: center;"><a class="shortcuts" href="shortcuts">Shortcuts</a></p>
+		<h1>Hi! I'm <span class="dante_nl">dante_nl</span>!</h1>
+		<p>I am a teenage developer that enjoys coding A LOT! I would rather code one day than I would to do my favorite subject at
+		school for a day (history). Ik ben geboren in Nederland, maar ik spreek Engels beter dan Nederlands (I am born in the
+		Netherlands, but I speak English better than Dutch). I prefer the U.S. version of English, but sadly, the U.K. version
+		is taught at my school, so sometimes it’s a bit difficult to understand, but most of the time it’s pretty easy to
+		understand. I also learn French at school, but it’s not as simple as English sadly. I would rate it 1/10, I wouldn’t
+		start it, but it can be nice tho if you are going to France, and it’s somewhat close to the Netherlands (theoretically
+		we share a border on the island of Sint Maarten / Saint Martin, which is nowhere near the Netherlands), the only
+		obstacle is Belgium, but there they also speak French. Anyways, I moved to #off-topic…</p>
+		<br>
+		<p>I really like Discord, so much that my default profile picture is Wumpus, one of Discord’s mascots. Because of that, the
+		accent color on this website is <span style="color: #7289da">blurple</span> (<span style="color: #7289da">#7289da</span>). You can join my Discord via my sidebar on the right on your screen.</p>
+	</div>
+	<div class="split right">
+		<h2>Socials and stuff</h2>
+		<p>If you came here to know my socials, here you go, here are my 4 most important socials. My Discord account, Discord server, RoutineHub and Github.</p>
+		<p><a href="javascript:copyDiscord()" class="discordcopy" id="copy">Click to copy my Discord</a></p>
+		<p><a href="/discord" class="discordjoin" rel="noopener noreferrer" target="_blank">Join the Discord server</a></p>
+		<p><a href="https://rhub.xyz?u=dante_nl" class="rhbutton" rel="noopener noreferrer" target="_blank">View my RoutineHub</a></p>
+		<p><a href="/github" class="ghbutton" rel="noopener noreferrer" target="_blank">View my Github</a>
 	</div>
 	<script>
-		var close = document.getElementsByClassName("closebtn");
-		var i;
-
-		for (i = 0; i < close.length; i++) {
-			close[i].onclick = function () {
-				var div = this.parentElement;
-				div.style.opacity = "0";
-				setTimeout(function () { div.style.display = "none"; }, 600);
+		function copyDiscord() {
+			var selectText = document.getElementById("TagName").innerHTML;
+			var input = document.createElement("input");
+			input.value = selectText;
+			document.body.appendChild(input);
+			input.select();
+			document.execCommand("copy");
+			document.body.removeChild(input);
+			if(typeof count === 'undefined') {
+				count = 1
+				document.getElementById('copy').innerHTML = "Copied!"
+			} else if(count == 1) {
+				count = count + 1
+				document.getElementById('copy').innerHTML = "Cloned!"
+			} else if (count == 2) {
+				count = count + 1
+				document.getElementById('copy').innerHTML = "Duped!"
+			} else if (count == 3) {
+				count = count + 1
+				document.getElementById('copy').innerHTML = "Super Duped!"
+			} else if (count == 4) {
+				count = count + 1
+				document.getElementById('copy').innerHTML = "Super Duper Duped!"
+			} else if (count == 5) {
+				count = count + 1
+				document.getElementById('copy').innerHTML = "Super Duper Duper Duped!"
+			} else if (count == 6) {
+				count = count + 1
+				document.getElementById('copy').innerHTML = "Super Duper Duper Duper Duped!"
+			} else if (count == 7) {
+				count = count + 1
+				document.getElementById('copy').innerHTML = "stop touching me please thanks"
+			} else if (count == 8) {
+				count = count + 1
+				document.getElementById('copy').innerHTML = "stop please!"
+			} else if (count == 9) {
+				count = count + 1
+				document.getElementById('copy').innerHTML = "please stop!"
+			} else if(count >= 10) {
+				count = count + 1
+				document.getElementById('copy').innerHTML = `stop, you did this ${count} times already!!`
+				document.getElementById('copy').style.background = "#ED4245"
+				document.getElementById("TagName2").innerHTML = `you copied "dante_nl#0001" ${count} times`
+				var selectText = document.getElementById("TagName2").innerHTML;
+				var input = document.createElement("input");
+				input.value = selectText;
+				document.body.appendChild(input);
+				input.select();
+				document.execCommand("copy");
+				document.body.removeChild(input);
 			}
 		}
 	</script>
+	<span style="display: none" id="TagName">dante_nl#0001</span>
+	<span style="display: none" id="TagName2"></span>
 </body>
-
-</html>
