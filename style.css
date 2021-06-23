@@ -172,11 +172,13 @@ border-radius: 8px;
 	top: 0;
 	overflow-x: hidden;
 	padding-top: 20px;
+	overflow: hidden;
 }
 
 .left {
 	left: 0;
 	text-align: left;
+	overflow: hidden;
 }
 
 .right {
@@ -184,4 +186,5 @@ border-radius: 8px;
 	text-align: right;
 	border-left: 3px solid  #7289DA;
 	padding-right: 5px;
+	overflow: hidden;
 }
