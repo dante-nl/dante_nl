@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>dante_nl</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="dante_nl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dante-nl.netlify.app/" />
+    <meta property="og:image" content="https://dante-nl.netlify.app/wumpus.png" />
+    <meta property="og:description" content="On this site you can get information about my Shortcuts and my other projects" />
+  <meta property="theme-color" content="#7289DA" />
+    <link rel="stylesheet" href="https://dante-nl.netlify.app/style.css" />
+
+<style>
+
+canvas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+<script>
+const canvasEl = document.querySelector('#canvas');
+
+const w = canvasEl.width = window.innerWidth;
+const h = canvasEl.height = window.innerHeight * 2;
+
+function loop() {
+  requestAnimationFrame(loop);
+  ctx.clearRect(0,0,w,h);
+
+  confs.forEach((conf) => {
+    conf.update();
+    conf.draw();
+  })
+}
+
+function Confetti () {
+  //construct confetti
+  const colours = ['#fde132', '#009bde', '#ff6b00'];
+
+  this.x = Math.round(Math.random() * w);
+  this.y = Math.round(Math.random() * h)-(h/2);
+  this.rotation = Math.random()*360;
+
+  const size = Math.random()*(w/60);
+  this.size = size < 15 ? 15 : size;
+
+  this.color = colours[Math.floor(colours.length * Math.random())];
+
+  this.speed = this.size/7;
+
+  this.opacity = Math.random();
+
+  this.shiftDirection = Math.random() > 0.5 ? 1 : -1;
+}
+
+Confetti.prototype.border = function() {
+  if (this.y >= h) {
+    this.y = h;
+  }
+}
+
+Confetti.prototype.update = function() {
+  this.y += this.speed;
+
+  if (this.y <= h) {
+    this.x += this.shiftDirection/3;
+    this.rotation += this.shiftDirection*this.speed/100;
+  }
+
+  if (this.y > h) this.border();
+};
+
+Confetti.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.size, this.rotation, this.rotation+(Math.PI/2));
+  ctx.lineTo(this.x, this.y);
+  ctx.closePath();
+  ctx.globalAlpha = this.opacity;
+  ctx.fillStyle = this.color;
+  ctx.fill();
+};
+
+const ctx = canvasEl.getContext('2d');
+const confNum = Math.floor(w / 4);
+const confs = new Array(confNum).fill().map(_ => new Confetti());
+
+loop();
+</script>
+
+
+    <div class="topnav" id="navbar"><a href="/index" style="text-decoration: none; color: #FFFFFF; float: left;">Home</a><a href="shortcuts" style="text-decoration: none; color: #AAAAAA; float: right;">Shortcuts</a></div>
+  <div class="fade-in">
+
+    <h1 style="text-align: center;"><span style="color:#D75F8C;">d</span><span style="color:#AC6E98;">a</span><span style="color:#827DA4;">n</span><span style="color:#588CB0;">t</span><span style="color:#2E9CBD;">e</span><span style="color:#2F92C3;">_</span><span style="color:#3088CA;">n</span><span style="color:#317ED0;">l</span></h1>
+    <h2 style="text-align: center;">On this site you can get information about my Shortcuts and my other projects!</h2>
+    <p style="text-align: center;"><a class="button" href="routinehub" rel="noopener noreferrer" target="_blank">RoutineHub</a></p>
+    <p style="text-align: center;"><a class="discord" href="discord" rel="noopener noreferrer" target="_blank">Join Discord</a></p>
+    <p style="text-align: center;"><a class="mail" href="mailto:dante_nl@icloud.com" rel="noopener noreferrer" target="_blank">Send an e-mail</a></p>
+    <p style="text-align: center;"><a class="shortcuts" href="shortcuts">Shortcuts</a></p>
+ <h1 style="text-align: center;">Time until my birthday:</h1>
+ <h2 style="text-align: center;" id="countdown"></h2>
+
+<script>
+var countDownDate = new Date("Jan 20, 2021 8:00:00").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "Happy birthday to me!";
+  }
+}, 1000);
+</script>
+    </div>
+</body>
+
+</html>
