@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<title>dante_nl</title>
@@ -17,116 +17,265 @@
 	<meta property="theme-color" content="#7289DA" />
 	<link rel="stylesheet" href="style.css" />
 	<meta charset="utf-8" />
+	<script src="https://kit.fontawesome.com/ee422b4c3c.js" crossorigin="anonymous"></script>
+</head>
+<body onload="load()">
+	<div id="loader">
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+		<h1>Loading website...</h1>
+		<h2>If it takes longer than 10 seconds, please send me a message on Discord! (dante_nl#1234)</h2>
+	</div>
+	<div id="content">
+	<span id="backgroundButton"><a href="javascript:changeBackground()" id="backgroundIcon" class="fas fa-sun" alt="Sun"></a></span>
+	<img id="wumpus" src="/Resources/Wumpus_Hanging.png" alt="Wumpus hanging from the ceiling with a party hat"><br>
+	<!-- <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #7289da; color: #fff; border-radius: 8px">
+		<strong>Hey!</strong> Currently you're visiting a page that is being worked on! So not everything might work
+		properly! <i>This text is not part of the page, and is just directly pasted on top of it)</i>
+	</div> -->
+	<div class="text">
+	<div class="info-box" id="light-dark-box"><p><b>Hi!</b> It looks like you changed visibility (dark to light or the other way around) on your device! <a href="javascript:changeBackgroundSpecial()">Click to change this page too!</a></p></div>
+	<h1>Hi! I'm <span class="gradient ukraine">dante_nl</span></h1>
+	<p>I am a teenage developer that enjoys coding. I live in the Netherlands (it's currently <span id="EUTime">loading my time</span> for me, so I'm probably <span id="AwakeAsleep">asleep or awake</span>), however, I prefer to speak English online, and I prefer the U.S. version of English, but sadly, the U.K. version
+	is taught at my school, however my grades were never affected by me using the U.S. version on tests.</p>
+	<p>I have coded various things, ranging from Discord bots in Python, to <a href="https://quick-stats.info" target="_blank">a website that gets the Hypixel stats of a player in PHP</a>a. I used to be quite active in the Shortcuts community from 2019 to 2020, however, in my opinion, Apple ruined Shortcuts. The app worked awesome 
+	and there were no problems (as far as I can remember) on i(Pad)OS 13 (the version I started, so I can't say anything about iOS 12), however, Apple changed them so it's 10x worse on i(Pad)OS 14 and newer. I mostly work on HTML, CSS and JavaScript these days, and I have been coding Discord themes for <a href="https://powercord.dev" target="_blank">Powercord</a>. 
+	I have also been working on Minecraft serversthat I have been coding with <a href="https://github.com/SkriptLang/Skript" target="_blank">Skript</a>
+	</p>
+	<hr>
+	<h2>My socials!</h2>
+	<p>I'm most active on my Discord so if you want a quick answer, I recommend sending a messages on there!</p>
+	<a href="https://discord.gg/Mbcdquqye9" target="_blank" class="button discordjoin">Join Discord</a><a href="javascript:copy('dante_nl#1234');document.getElementById('copyDiscord').innerText = 'Copied!'" id="copyDiscord" class="button discordcopy">Copy Discord</a>
+	<p>You can also spy at some projects I'm doing on my GitHub!</p>
+	<a href="https://github.com/dante-nl" target="_blank" class="button ghbutton">Visit my GitHub</a>
+	</div></div>
 	<script>
-		/* Mobile redirect */
-		if (screen.width <= 699) { 
-			if(window.location.pathname == "/mobile.html") {
-				exit();
+		function load() {
+			if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				background = "dark"
+				document.body.classList.add("dark")
+				document.getElementById("backgroundButton").innerHTML = '<a href="javascript:changeBackground()" id="backgroundIcon" class="fas fa-moon" alt="Moon"></a>'
 			} else {
-				document.location="mobile.html" ;
+				background = "light"
+				document.body.classList.remove("dark")
+				document.getElementById("backgroundButton").innerHTML = '<a href="javascript:changeBackground()" id="backgroundIcon" class="fas fa-sun" alt="Sun"></a>'
 			}
-		} 
-		else {
-			if(window.location.pathname == "/index.html") {
-				exit();
+			DarkModeOnStart = window.matchMedia('(prefers-color-scheme: dark)').matches
+			completedTasks = 0
+			document.getElementById("content").style.display = "none"
+			document.getElementById("loader").style.display = "block"
+			updatedTimeOnce = false
+			console.log("Hi! Welcome to the console! Get nice and comfy here, and watch the JavaScript activities send outputs when they are executed!")
+			console.log("We're launching the website, should be launched within a few seconds!")
+			console.log("Currently, we're executing the script that runs when the page gets loaded!")
+			background = "light"
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+				// Mobile device
+				console.log("It appears that you're on a mobile device! This means that you get the website optimised for those small devices!")
+				document.body.classList.add("mobile")
 			} else {
-				document.location="index.html" ; 
+				// Not mobile
+				console.log("It appears that you're not on a mobile device! (laptop, computer, etc.) This means that you get the normal website!")
+				document.body.classList.remove("mobile")
+			}
+			document.getElementById("light-dark-box").style.display = "none"
+			console.log(`Here's the date in CE(S)T right now: ${(getEUDate())}`)
+			CETTime = `${getEUDate().getHours()}:${getEUDate().getMinutes()}:${getEUDate().getSeconds()}`;
+			console.log(`And here's the time in CE(S)T: ${CETTime}`)
+			console.log("If you want to see the time constantly update in the console, do 'ToggleUpdateTimeLogs()'. Don't know why you would want it, but you can!")
+			logTime = false
+			completedTasks = completedTasks + 1
+			const LoadingLoop2 = setInterval(loadedPage, 1000);
+			const PrettyTimeLoop2 = setInterval(getEUTime, 1000);
+			const TimeLoop = setInterval(updateTime, 1000);
+			const LightDarkLoop = setInterval(detectLightDark, 1000);
+		}
+
+		function loadedPage() {
+			if(completedTasks == 2) {
+				console.log("All tasks completed, launching website!")
+				document.getElementById("content").style.display = "block"
+				document.getElementById("loader").style.display = "none"
+				completedTasks = "completed"
+				console.log("While you're here, feel free to play some rock, paper, scissors! Just do RPS('<move>') to start! Just replace <move> with the letter r (rock), the letter p (paper) or the letter s (scissors)! :D ")
+			} 
+		}
+		function updateTime() {
+			if(logTime==true) {
+				console.log(`Updated time, says ${EUTimeHours}:${EUTimeMinutes}:${EUTimeSeconds} now.`)
+			}
+			document.getElementById("EUTime").innerText = `${EUTimeHours}:${EUTimeMinutes}:${EUTimeSeconds}`
+			if(getEUDate().getHours() > 7 && getEUDate().getHours() < 22) {
+				document.getElementById("AwakeAsleep").innerText = "awake"
+			} else {
+				document.getElementById("AwakeAsleep").innerText = "asleep"
+			}
+			if(updatedTimeOnce == false) {
+				updatedTimeOnce = true
+				completedTasks = completedTasks + 1
 			}
 		}
 
-		/* Check if FileSaver works */
-		try {
-			var isFileSaverSupported = !!new Blob;
-		} catch (e) { 
-			var oldbrowser = document.getElementById("oldbrowser");
-			oldbrowser.style.display = "block";
-		}
-	</script>
-</head>
-<body>
-	
-	<div class="split left">
-	<div class="alert" id="oldbrowser" style="display: none;">
-		<strong>Hi!</strong> The file saving function doesn't work in your browser, so if there is an announcement to show here, you can't permantly close it!
-	</div>
-	<div class="alert info">
-		<strong>Hi!</strong> I got a lot of feedback, so redesign of my redesign coming soon!
-	</div>
-		<h1>Hi! I'm <span class="dante_nl">dante_nl</span>!</h1>
-		<p>I am a teenage developer that enjoys coding A LOT! I would rather code one day than I would to do my favorite subject at
-		school for a day (history). Ik ben geboren in Nederland, maar ik spreek Engels beter dan Nederlands (I am born in the
-		Netherlands, but I speak English better than Dutch). I prefer the U.S. version of English, but sadly, the U.K. version
-		is taught at my school, so sometimes it’s a bit difficult to understand, but most of the time it’s pretty easy to
-		understand. I also learn French at school, but it’s not as simple as English sadly. I would rate it 1/10, I wouldn’t
-		start it, but it can be nice tho if you are going to France, and it’s somewhat close to the Netherlands (theoretically
-		we share a border on the island of Sint Maarten / Saint Martin, which is nowhere near the Netherlands), the only
-		obstacle is Belgium, but there they also speak French. Anyways, I moved to #off-topic…</p>
-		<br>
-		<p>I really like Discord, so much that my default profile picture is Wumpus, one of Discord’s mascots. Because of that, the
-		accent color on this website is <span style="color: #7289da">blurple</span> (<span style="color: #7289da">#7289da</span>). You can join my Discord via my sidebar on the right on your screen.</p>
-	</div>
-	<div class="split right">
-		<h2>Socials and stuff</h2>
-		<p>If you came here to know my socials, here you go, here are my 4 most important socials. My Discord account, Discord server, RoutineHub and Github.</p>
-		<p><a href="javascript:copyDiscord()" class="discordcopy" id="copy">Click to copy my Discord</a></p>
-		<p><a href="/discord" class="discordjoin" rel="noopener noreferrer" target="_blank">Join the Discord server</a></p>
-		<p><a href="https://rhub.xyz?u=dante_nl" class="rhbutton" rel="noopener noreferrer" target="_blank">View my RoutineHub</a></p>
-		<p><a href="/github" class="ghbutton" rel="noopener noreferrer" target="_blank">View my Github</a>
-	</div>
-	<script>
-		function copyDiscord() {
-			var selectText = document.getElementById("TagName").innerHTML;
-			var input = document.createElement("input");
-			input.value = selectText;
-			document.body.appendChild(input);
-			input.select();
-			document.execCommand("copy");
-			document.body.removeChild(input);
-			if(typeof count === 'undefined') {
-				count = 1
-				document.getElementById('copy').innerHTML = "Copied!"
-			} else if(count == 1) {
-				count = count + 1
-				document.getElementById('copy').innerHTML = "Cloned!"
-			} else if (count == 2) {
-				count = count + 1
-				document.getElementById('copy').innerHTML = "Duped!"
-			} else if (count == 3) {
-				count = count + 1
-				document.getElementById('copy').innerHTML = "Super Duped!"
-			} else if (count == 4) {
-				count = count + 1
-				document.getElementById('copy').innerHTML = "Super Duper Duped!"
-			} else if (count == 5) {
-				count = count + 1
-				document.getElementById('copy').innerHTML = "Super Duper Duper Duped!"
-			} else if (count == 6) {
-				count = count + 1
-				document.getElementById('copy').innerHTML = "Super Duper Duper Duper Duped!"
-			} else if (count == 7) {
-				count = count + 1
-				document.getElementById('copy').innerHTML = "stop touching me please thanks"
-			} else if (count == 8) {
-				count = count + 1
-				document.getElementById('copy').innerHTML = "stop please!"
-			} else if (count == 9) {
-				count = count + 1
-				document.getElementById('copy').innerHTML = "please stop!"
-			} else if(count >= 10) {
-				count = count + 1
-				document.getElementById('copy').innerHTML = `stop, you did this ${count} times already!!`
-				document.getElementById('copy').style.background = "#ED4245"
-				document.getElementById("TagName2").innerHTML = `you copied "dante_nl#0001" ${count} times`
-				var selectText = document.getElementById("TagName2").innerHTML;
-				var input = document.createElement("input");
-				input.value = selectText;
-				document.body.appendChild(input);
-				input.select();
-				document.execCommand("copy");
-				document.body.removeChild(input);
+		function ToggleUpdateTimeLogs() {
+			if(logTime == true) {
+				logTime = false
+				console.log("No longer logging time!")
+			} else {
+				input = prompt("Hey, when you enable this, it might affect the performance of the device that has the website open. Sure you want to continue? (y/n)")
+				if(input=="y" || input=="Y") {
+					logTime = true
+					console.log("Okay, you say so. Enabled time logs.")
+				} else {
+					console.log("Good thinking! I would do the same too! :D")
+				}
 			}
 		}
+
+		function getEUDate() {
+				var localDate = new Date();
+				var utcOffset = localDate.getTimezoneOffset();
+				var cetOffset = utcOffset + 60;
+				var cestOffset = utcOffset + 120;
+				var cetOffsetInMilliseconds = cetOffset * 60 * 1000;
+				var cestOffsetInMilliseconds = cestOffset * 60 * 1000;
+
+				var cestDateStart = new Date();
+				var cestDateFinish = new Date();
+				var localDateTime = localDate.getTime();
+				var cestDateStartTime;
+				var cestDateFinishTime;
+				var result;
+
+				cestDateStart.setTime(Date.parse('29 March ' + localDate.getFullYear() + ' 02:00:00 GMT+0100'));
+				cestDateFinish.setTime(Date.parse('25 October ' + localDate.getFullYear() + ' 03:00:00 GMT+0200'));
+
+				cestDateStartTime = cestDateStart.getTime();
+				cestDateFinishTime = cestDateFinish.getTime();
+
+				if (localDateTime >= cestDateStartTime && localDateTime <= cestDateFinishTime) {
+					result = new Date(localDateTime + cestOffsetInMilliseconds);
+				} else {
+					result = new Date(localDateTime + cetOffsetInMilliseconds);
+				}
+
+				return result;
+			}
+
+		function getEUTime() {
+			if(getEUDate().getHours() < 10) {
+				EUTimeHours = `0${getEUDate().getHours()}`
+			} else {
+				EUTimeHours = getEUDate().getHours()
+			} if(getEUDate().getMinutes() < 10) {
+				EUTimeMinutes = `0${getEUDate().getMinutes()}`
+			} else {
+				EUTimeMinutes = getEUDate().getMinutes()
+			} if (getEUDate().getSeconds() < 10) {
+				EUTimeSeconds = `0${getEUDate().getSeconds()}`
+			} else {
+				EUTimeSeconds = getEUDate().getSeconds()
+			}
+		}
+
+		function changeBackground() {
+			console.log("Changing the theme!")
+			if(background == "dark") {
+				background = "light"
+				document.body.classList.remove("dark")
+				document.getElementById("backgroundButton").innerHTML = '<a href="javascript:changeBackground()" id="backgroundIcon" class="fas fa-sun" alt="Sun"></a>'
+				console.log("You're now on the light theme!")
+			} else {
+				background = "dark"
+				document.body.classList.add("dark")
+				document.getElementById("backgroundButton").innerHTML = '<a href="javascript:changeBackground()" id="backgroundIcon" class="fas fa-moon" alt="Moon"></a>'
+				console.log("You're now on the dark theme!")
+			}
+		}
+
+		function changeBackgroundSpecial() {
+			console.log("Changing the theme, following the system!")
+			if(window.matchMedia('(prefers-color-scheme: light)').matches) {
+				DarkModeOnStart = false
+				background = "light"
+				document.body.classList.remove("dark")
+				document.getElementById("backgroundButton").innerHTML = '<a href="javascript:changeBackground()" id="backgroundIcon" class="fas fa-sun" alt="Sun"></a>'
+				document.getElementById("light-dark-box").style.display = "none"
+				console.log("You're now on the light theme!")
+			} else {
+				DarkModeOnStart = true
+				background = "dark"
+				document.body.classList.add("dark")
+				document.getElementById("backgroundButton").innerHTML = '<a href="javascript:changeBackground()" id="backgroundIcon" class="fas fa-moon" alt="Moon"></a>'
+				document.getElementById("light-dark-box").style.display = "none"
+				console.log("You're now on the dark theme!")
+			}
+		}
+
+		function detectLightDark() {
+			if(window.matchMedia('(prefers-color-scheme: light)').matches) {
+				if(DarkModeOnStart == true) {
+					document.getElementById("light-dark-box").style.display = "block"
+				}
+			} else {
+				if(DarkModeOnStart == false) {
+					document.getElementById("light-dark-box").style.display = "block"
+				}
+			}
+		}
+
+		function copy(text) {
+			var textField = document.createElement('textarea');
+			textField.innerText = text;
+			document.body.appendChild(textField);
+			textField.select();
+			document.execCommand('copy');
+			textField.remove();
+		}
+
+		function RPS(rps) {
+			if (rps == null) {
+				console.log(`I'm not sure what you mean with "${rps}"! Try "RPS('<move>'", and replace <move> with the letter r (rock), the letter p (paper) or the letter s (scissors) :)`)
+				return
+			}
+			rps = rps.toLowerCase()
+			if(rps == "rock" || rps == "r") {
+				if (random() == 0) {
+					console.log("TIE! \n- You: Rock \n- Computer: Rock")
+				} else if (random() == 1) {
+					console.log("COMPUTER WON! \n- You: Rock \n- Computer: Paper")
+				} else if (random() == 2) {
+					console.log("YOU WON! \n- You: Rock \n- Computer: Scissors")
+				}
+			}
+			else if (rps == "paper" || rps == "p") {
+				if (random() == 0) {
+					console.log("YOU WON! \n- You: Paper \n- Computer: Rock")
+				} else if (random() == 1) {
+					console.log("TIE! \n- You: Paper \n- Computer: Paper")
+				} else if (random() == 2) {
+					console.log("COMPUTER WON! \n- You: Paper \n- Computer: Scissors")
+				}
+			}
+			else if (rps == "scissors" || rps == "s") {
+				if (random() == 0) {
+					console.log("COMPUTER WON! \n- You: Scissors \n- Computer: Rock")
+				} else if (random() == 1) {
+					console.log("YOU WON! \n- You: Scissors \n- Computer: Paper")
+				} else if (random() == 2) {
+					console.log("TIE! \n- You: Scissors \n- Computer: Scissors")
+				}
+			}
+			else {
+				console.log(`I'm not sure what you mean with "${rps}"! Try "RPS('<move>'", and replace <move> with the letter r (rock), the letter p (paper) or the letter s (scissors) :)`)
+			}
+		}
+
+		function random() {
+			return(Math.floor(Math.random() * 3));
+		}
 	</script>
-	<span style="display: none" id="TagName">dante_nl#0001</span>
-	<span style="display: none" id="TagName2"></span>
+
 </body>
